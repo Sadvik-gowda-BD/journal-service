@@ -17,7 +17,6 @@ public class UserEventsConsumer {
 
     @KafkaListener(topics = userEventTopic)
     public void consumerUserEvents(ConsumerRecord<String, String> consumerRecord) {
-        log.info("************************");
         log.info("Consumed message - key:{} ,value:{}", consumerRecord.key(), consumerRecord.value());
         userEventService.saveUserEvent(consumerRecord.value());
     }

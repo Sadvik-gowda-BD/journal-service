@@ -6,4 +6,5 @@ import lombok.Data;
 public class UserEventDto {
     private long eventId;
     private String eventDescription;
+    private String createDateTime;
 }

@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -30,6 +31,7 @@ public class UserEventServiceImpl implements UserEventService {
     public void saveUserEvent(String event) {
         UserEventEntity eventEntity = UserEventEntity.builder()
                 .eventDescription(event)
+                .createdDateTime(LocalDateTime.now())
                 .build();
         userEventRepository.save(eventEntity);
     }

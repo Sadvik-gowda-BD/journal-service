@@ -10,6 +10,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Builder
 @Data
@@ -20,8 +23,10 @@ public class UserEventEntity {
 
     @Id
     @GeneratedValue
-    @Column(name = "USER_ID")
+    @Column(name = "EVENT_ID")
     private long eventId;
     @Column(name = "EVENT_DESCRIPTION")
     private String eventDescription;
+    @Column(name = "CREATE_DATE_TIME")
+    private LocalDateTime createdDateTime;
 }
