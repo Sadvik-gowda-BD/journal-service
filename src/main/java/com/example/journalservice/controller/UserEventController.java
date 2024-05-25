@@ -1,8 +1,10 @@
 package com.example.journalservice.controller;
 
-import com.example.journalservice.dto.UserEventDto;
+import com.example.journalservice.dto.UserEventResponseDto;
+import com.example.journalservice.repository.UserCredentialRepo;
 import com.example.journalservice.service.UserEventService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +18,11 @@ public class UserEventController {
 
     private final UserEventService userEventService;
 
+    @Autowired
+    UserCredentialRepo userCredentialRepo;
+
     @GetMapping("/all")
-    public List<UserEventDto> getAllUserEvents() {
+    public List<UserEventResponseDto> getAllUserEvents() {
         return userEventService.getAllUserEvents();
     }
 
