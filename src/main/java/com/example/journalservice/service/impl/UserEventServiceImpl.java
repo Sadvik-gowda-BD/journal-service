@@ -7,7 +7,6 @@ import com.example.journalservice.mapper.UserEventMapper;
 import com.example.journalservice.repository.UserEventRepository;
 import com.example.journalservice.service.UserEventService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
