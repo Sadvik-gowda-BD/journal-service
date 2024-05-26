@@ -1,4 +1,4 @@
-package exception;
+package com.example.journalservice.exception;
 
 public class UserNotFound extends RuntimeException{
 
