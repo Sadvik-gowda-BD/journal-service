@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EventDto {
-    String message;
-    String accessedBy;
-    String accessedFor;
+    private String message;
+    private String accessedBy;
+    private String accessedFor;
 }

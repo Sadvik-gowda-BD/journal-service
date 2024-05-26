@@ -24,9 +24,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(authReq -> {
-            //TODO: add authentication for all api
-//            authReq.anyRequest().authenticated();
-            authReq.anyRequest().permitAll();
+            authReq.anyRequest().authenticated();
         });
 
         httpSecurity.csrf(AbstractHttpConfigurer::disable);

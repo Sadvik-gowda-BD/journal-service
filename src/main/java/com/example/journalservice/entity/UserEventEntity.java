@@ -27,6 +27,10 @@ public class UserEventEntity {
     private long eventId;
     @Column(name = "EVENT_DESCRIPTION")
     private String eventDescription;
+    @Column(name = "ACCESSED_BY")
+    private String accessedBy;
+    @Column(name = "ACCESSED_FOR")
+    private String accessedFor;
     @Column(name = "CREATE_DATE_TIME")
     private LocalDateTime createdDateTime;
 }

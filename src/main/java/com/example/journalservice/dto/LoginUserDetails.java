@@ -1,5 +1,6 @@
 package com.example.journalservice.dto;
 
+import com.example.journalservice.entity.RoleEntity;
 import com.example.journalservice.entity.UserCredentialEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -54,7 +55,7 @@ public class LoginUserDetails implements UserDetails {
         return true;
     }
 
-    private List<GrantedAuthority> getGrantedAuthorities(String userRole) {
-        return List.of(new SimpleGrantedAuthority(userRole));
+    private List<GrantedAuthority> getGrantedAuthorities(RoleEntity roleEntity) {
+        return List.of(new SimpleGrantedAuthority(roleEntity.getRole()));
     }
 }
