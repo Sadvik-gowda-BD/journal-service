@@ -1,6 +1,6 @@
 package com.example.journalservice.service.impl;
 
-import com.example.journalservice.dto.UserEventDto;
+import com.example.journalservice.dto.UserEventResponseDto;
 import com.example.journalservice.entity.UserEventEntity;
 import com.example.journalservice.repository.UserEventRepository;
 import com.example.journalservice.service.UserEventService;
@@ -18,10 +18,10 @@ public class UserEventServiceImpl implements UserEventService {
     private final UserEventRepository userEventRepository;
 
     @Override
-    public List<UserEventDto> getAllUserEvents() {
+    public List<UserEventResponseDto> getAllUserEvents() {
         return userEventRepository.findAll()
                 .stream().map(eventEntity -> {
-                    UserEventDto eventDto = new UserEventDto();
+                    UserEventResponseDto eventDto = new UserEventResponseDto();
                     BeanUtils.copyProperties(eventEntity, eventDto);
                     return eventDto;
                 }).toList();
